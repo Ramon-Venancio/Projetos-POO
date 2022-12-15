@@ -4,8 +4,8 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Hello, world")
+    return render(request,"hello/index.html")
 
 
 def nome(request, nome):
-    return HttpResponse(f'Hello {nome}')
+    return render(request,"hello/nome.html",{"name":nome.title()})
